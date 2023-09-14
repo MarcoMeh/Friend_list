@@ -1,0 +1,10 @@
+<h1>Editing friend</h1>
+
+<%= render "form", friend: @friend %>
+
+<br>
+
+<div class="button-group">
+  <%= button_to "Show", friend_path, method: :get,  class: "btn-table"%>
+  <%= button_to "Back", friends_path, method: :get, class: "btn-table" %>
+</div>

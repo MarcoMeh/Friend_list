@@ -1,0 +1,13 @@
+
+<%= render @friend %>
+
+<div class="button-container">
+  <div class="button-group">
+    <%= button_to "Edit", edit_friend_path(@friend), method: :get, class: "btn-table" %>
+    <%= button_to "Destroy", @friend, method: :delete, class: "btn-table btn-delete" %>
+  </div>
+  <br>
+  <div>
+    <%= button_to "Back", friends_path, method: :get, class: "btn-table" %>
+  </div>
+</div>

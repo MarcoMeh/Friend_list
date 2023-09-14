@@ -1,0 +1,36 @@
+<% if user_signed_in?%>
+
+  <h1 style="color: white;">Friends</h1>
+  <div class="containertable">
+    <table class="table table-borderless table-dark">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Phone</th>
+          <th>Snap</th>
+          <th><%= button_to "New Friend", new_friend_path, method: :get,  class: "btn-table btn-td"%></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @friends.each do |friend| %>
+          <% if friend.user == current_user %>
+          <tr>
+            <td><%= link_to friend.first_name + ' ' + friend.last_name ,friend%></td>
+            <td><%= link_to friend.email, friend %></td>
+            <td><%=friend.age%></td>
+            <td><%= link_to friend.phone, friend %></td>
+            <td><%= link_to friend.snap, friend %></td>
+            <td><%= button_to "Delete", friend, method: :delete, class: "btn-table btn-td btn-delete " %></td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </div>
+    </table>
+ 
+<% else %>
+  <h1>helloooooo</h1>
+<% end %>
